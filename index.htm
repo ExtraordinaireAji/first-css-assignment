@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile Card / CodingLab</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+
+  <!-- Designing my codingLab -->
+
+  <body>
+    <div class="main-box">
+      <div class="content">
+        <input type="checkbox" id="check">
+        <label for="check" class="box">
+          <div class="share">share</div>
+          <div class="cancel">cancel</div>
+        </label>
+        <div class="image-box">
+          <img src="my nat pic.jpg" alt="">
+          <div class="about">
+            <div class="details">
+              <div class="name">Toheeb Ajiboye</div>
+              <div class="job">Web developer</div>
+              <div class="icons">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+      }
+      body {
+        background: #3498db;
+      }
+
+      .main-box {
+        height: 550px;
+        width: 400px;
+        position: absolute;
+        left: 50%;
+        top: 52%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .main-box .content {
+        position: relative;
+        height: 100%;
+        width: 100%;
+      }
+      .content .box {
+        position: absolute;
+        height: 50px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      .content .box .share,
+      .cancel {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        line-height: 50px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #2980b9;
+        background: #fff;
+        letter-spacing: 1px;
+        border-radius: 25px;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .content .box .share {
+        opacity: 1;
+      }
+      #check :checked ~ .box .share {
+        opacity: 0;
+      }
+      #check :checked ~ .box .cancel {
+        opacity: 1;
+      }
+      #check {
+        display: none;
+      }
+      .content .image-box {
+        position: absolute;
+        height: 450px;
+        width: 100%;
+        border-radius: 25px;
+        background: #fff;
+        padding: 10px;
+        left: 0;
+        bottom: 130px;
+        transition: all 0.4s ease;
+      }
+      #check :checked ~ .image-box {
+        bottom: 80px;
+      }
+      .content .image-box::before {
+        position: absolute;
+        content: '';
+        height: 30px;
+        width: 30px;
+        background: #fff;
+        left: 50%;
+        bottom: -12px;
+        transform: translateX(-50%) rotate(45deg);
+        z-index: -1; 
+      }
+
+      .content .image-box img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+      .image-box .about {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.35);
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        border-radius: 25px;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .about .details {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 35px;
+      }
+      #check:checked ~ .image-box .about {
+        opacity: 1;
+      }
+
+      .details .name,
+      .details .job {
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .details .name {
+        font-size: 22px;
+      }
+      .details .icons i{
+        font-size: 20px;
+        color: #fff;
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        line-height: 43px;
+        margin: 14px 5px;
+        transition: all 0.3s ease;
+      }
+      .details .icons i:hover {
+        background: #fff;
+        color: #2980b9;
+      }
+    </style>
+  </body>
+</html>
